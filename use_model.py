@@ -1,8 +1,9 @@
 import pandas as pd
-import joblib
+import pickle
 
-def retrive_model(path = "models/best_model.joblib"):
-    return joblib.load(path)
+def retrive_model(path = "models/best_model.pkl"):
+    with open("models/best_model.pkl", "rb") as f_r:
+        return pickle.load(f_r)
 
 model_pipeline = retrive_model()
 
