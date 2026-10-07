@@ -1,3 +1,55 @@
+English version, Romanian version bellow (Versiune în Română mai jos)
+
+
+### Machine Learning Model for Categorizing Product Titles
+
+Ungureanu George
+
+Hello and welcome to my project for automatic product categorization.
+
+### 1 How Does It Work?
+
+#### 1.1 Overview of the Model and Project Purpose
+
+This project uses a Machine Learning model to predict which product category a product belongs to, thus making it easier to name products when there are too many or when we need to place them into their categories on online sites.
+
+The model is trained on a dataset of 30,000 products and has an accuracy of approximately 97% on the current dataset, which has a small number of categories (1.2).
+
+#### 1.2 Data Overview
+
+The data comes from a product dataset that also includes product features. Because we use Scikit-Learn, we must have the same columns during training as during inference, so only the `"product_title"` column was chosen for training. (For training with more data and inference with a different number, we can use other libraries.)
+
+#### 1.3 Training Overview
+
+We train multiple models and take the one with the best balance (the highest F1 score). The best model is LinearSVC.
+
+#### 1.4 The Model as a Binary Object
+
+After training finishes, we save it as a `.pkl` object (`best_model.pkl` in `models/`).
+
+### 2 How We Use It
+
+#### 2.1 Importing
+
+In the `use_model.py` file, we extract the model and make a `while` loop that runs indefinitely until we type `"exit"`.
+
+#### 2.2 Manually Entered Data
+
+We enter each title from the keyboard and receive its category, but the functionality can be extended so that they are extracted and recreated from an Excel file or DataFrame (if we do this and provide the entire column, not each one separately, but for more categories the model must be retrained).
+
+#### 2.3 Usage
+
+* [ ] We run the file from the console with `"python use_model.py"` and enter each name individually from the keyboard, and below it its category will appear. (Categories available only in English: `mobile_phones`, `tvs`, `cpus`, `digital_cameras`, `microwaves`, `dishwashers`, `washing_machines`, `freezers`, `fridges`)
+
+
+
+
+
+
+
+
+
+
 ### Model de Machine Learning pentru categorizarea titlurilor de produse.
 
 Ungureanu George
