@@ -2,7 +2,7 @@ import pandas as pd
 import pickle
 
 def retrive_model(path = "models/best_model.pkl"):
-    with open("models/best_model.pkl", "rb") as f_r:
+    with open(path, "rb") as f_r:
         return pickle.load(f_r)
 
 model_pipeline = retrive_model()

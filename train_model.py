@@ -56,7 +56,7 @@ for i in [RandomForestClassifier(), LinearSVC(), SVC(), MultinomialNB(), Bernoul
     print(in_rez)
     results.append(in_rez)
 
-model = max(results, key=lambda d: d["f1-score"])["model_weights"]
-
+model = max(results, key=lambda d: d["f1-score"])
+print(f"\nThe best Model : {str(model["model"])}")
 with open("models/best_model.pkl", "wb") as f_w:
-    pickle.dump(model, f_w)
+    pickle.dump(model["model_weights"], f_w)
