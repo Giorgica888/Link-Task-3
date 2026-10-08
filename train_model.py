@@ -10,34 +10,36 @@ from sklearn.svm import LinearSVC, SVC
 from sklearn.naive_bayes import  MultinomialNB, BernoulliNB, ComplementNB
 import pickle
 
+# Receiving the data
 df = pd.read_csv("data/finished_products.csv")
 df.category_label = df.category_label.astype("category")
 
+# Making the split between the train and test data
 X = df[["product_title"]]
 y = df["category_label"]
-
-
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y, shuffle=True
 )
 
 def train_model(model):
+    "We transform the column title in numbers using tfidf()"
     preprocessor = ColumnTransformer(
         transformers= [
             ("title", TfidfVectorizer(), "product_title"),
         ]
     )
 
+    "We make a pipeline for the model that we pass as an argument"
     pipeline = Pipeline([
         ("preprocessing", preprocessor),
         ("classifier", model)
     ])
+    "Model Training"
     pipeline.fit(X_train, y_train)
-
     y_pred = pipeline.predict(X_test)
 
+    "Output as a dict so we can measure later"
     c_report = classification_report(y_test, y_pred, output_dict=True)
-
     metrics = {
     "model": str(model)[:-2],
     "model_weights" : pipeline,
@@ -48,7 +50,7 @@ def train_model(model):
     }
     return metrics
 
-
+"We place the prediction for each model in the list into the results list"
 results = []
 for i in [RandomForestClassifier(), LinearSVC(), SVC(), MultinomialNB(), BernoulliNB(), ComplementNB()]:
     print(i)

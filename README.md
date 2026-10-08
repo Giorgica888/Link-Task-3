@@ -1,6 +1,5 @@
 English version, Romanian version bellow (Versiune în Română mai jos)
 
-
 ### Machine Learning Model for Categorizing Product Titles
 
 Ungureanu George
@@ -41,15 +40,6 @@ We enter each title from the keyboard and receive its category, but the function
 
 * [ ] We run the file from the console with `"python use_model.py"` and enter each name individually from the keyboard, and below it its category will appear. (Categories available only in English: `mobile_phones`, `tvs`, `cpus`, `digital_cameras`, `microwaves`, `dishwashers`, `washing_machines`, `freezers`, `fridges`)
 
-
-
-
-
-
-
-
-
-
 ### Model de Machine Learning pentru categorizarea titlurilor de produse.
 
 Ungureanu George
@@ -86,6 +76,6 @@ După ce termină antrenarea, îl salvăm ca obiect .pkl (best_model.pkl din mod
 
 Introducem de la tastatură fiecare titlu și primim categoria, dar poate fii extinsă funcționalitatea astfel încât să fie extrase și refăcute dintr-un excel sau DataFrame (dacă facem asta îi oferim toată coloana nu fiecare în parte, dar pentru mai multe categorii trebuie reantrenat modelul).
 
-#### 2.3 Folosirea 
+#### 2.3 Folosirea
 
 Rulăm fișierul din consolă cu "python use_model.py" și introducem de la tastatură fiecare nume în parte, și sub acesta va apărea categoria acestuia. (categorii disponibile doar în engleză : mobile_phones, tvs, cpus, digital_cameras, microwaves, dishwashers, washing_machines, freezers, fridges)
